@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 元数据校验（tag 必须与 @version 一致）
+        run: |
+          node scripts/check-metadata.js
+          TAG="${GITHUB_REF_NAME#v}"
+          VER=$(grep -oP '(?<=@version\s)\d+\.\d+\.\d+' ulearning-course-helper.user.js | head -1)
+          echo "tag=$TAG version=$VER"
+          if [ "$TAG" != "$VER" ]; then
+            echo "::error::tag ($TAG) 与 @version ($VER) 不一致"
+            exit 1
+          fi
+
+      - name: 生成校验和
+        run: sha256sum ulearning-course-helper.user.js > ulearning-course-helper.user.js.sha256
+
+      - name: 创建 Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes \
+            ulearning-course-helper.user.js \
+            ulearning-course-helper.user.js.sha256

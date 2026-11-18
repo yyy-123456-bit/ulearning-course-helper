@@ -1,0 +1,21 @@
+{
+  "name": "ulearning-course-helper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Userscript for Ulearning course pages: auto-play, auto-turn-page and local question-bank answering",
+  "license": "MIT",
+  "author": "yyy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyy-123456-bit/ulearning-course-helper.git"
+  },
+  "keywords": ["userscript", "tampermonkey", "scriptcat", "ulearning"],
+  "scripts": {
+    "check": "node --check ulearning-course-helper.user.js",
+    "check:meta": "node scripts/check-metadata.js",
+    "test": "node --check ulearning-course-helper.user.js && node scripts/check-metadata.js && node test-smoke.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.3"
+  }
+}

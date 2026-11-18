@@ -1,0 +1,22 @@
+node_modules/
+package-lock.json.bak
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 题库：可能含学校内部试题，禁止入库
+bank/
+*.bank.json
+exports/
+ulearning-bank-*.json
+
+# 本地诊断产物
+diagnose-*.json
+
+# 个人草稿
+*.local.md
+
+# 本地工具与记忆目录（不要发布）
+.workbuddy/

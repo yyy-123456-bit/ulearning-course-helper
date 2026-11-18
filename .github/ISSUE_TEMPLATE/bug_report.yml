@@ -1,0 +1,63 @@
+name: 问题反馈
+description: 脚本未按预期工作（请先阅读排查手册）
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先点面板 **🔍 诊断** 并把 JSON 贴上，没有诊断信息很难定位问题。
+        提交前请确认已阅读 [排查手册](https://github.com/yyy-123456-bit/ulearning-course-helper/blob/main/docs/troubleshooting.md)。
+
+  - type: input
+    id: page
+    attributes:
+      label: 页面地址（可脱敏）
+      description: 保留路径特征即可，例如 learnCourse / homework / utest
+      placeholder: https://ua.ulearning.cn/learnCourse/learnCourse.html?...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 脚本版本
+      description: 面板左下角显示的版本号
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 浏览器 / 脚本管理器
+      placeholder: Edge 131 + Tampermonkey 5.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: diag
+    attributes:
+      label: 诊断 JSON
+      description: 点击面板「🔍 诊断」，粘贴到此处
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为 / 实际行为
+      placeholder: 期望播完自动翻页，实际停在当前页不动
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我已阅读 README 的兼容性与已知限制，确认不是"未适配场景"
+          required: true
+        - label: 我理解本项目仅供技术学习参考，使用风险由我自行承担
+          required: true

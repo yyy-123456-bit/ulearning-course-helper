@@ -1,0 +1,17 @@
+[
+  {
+    "question": "中国共产党人的初心和使命是（ ）",
+    "type": "single",
+    "answer": "B"
+  },
+  {
+    "question": "实践是检验真理的唯一标准。",
+    "type": "judgement",
+    "answer": "正确"
+  },
+  {
+    "question": "下列属于新民主主义革命三大法宝的是（ ）",
+    "type": "multiple",
+    "answer": "ABC"
+  }
+]

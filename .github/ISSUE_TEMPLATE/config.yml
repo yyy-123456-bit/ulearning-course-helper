@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用说明
+    url: https://github.com/yyy-123456-bit/ulearning-course-helper/blob/main/docs/usage.md
+    about: 安装步骤、面板说明、题库格式
+  - name: 排查手册
+    url: https://github.com/yyy-123456-bit/ulearning-course-helper/blob/main/docs/troubleshooting.md
+    about: 面板不出现、视频不播、题目未匹配
