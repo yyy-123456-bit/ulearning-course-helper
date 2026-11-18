@@ -17,8 +17,13 @@ jobs:
         run: |
           node scripts/check-metadata.js
           TAG="${GITHUB_REF_NAME#v}"
-          VER=$(grep -oP '(?<=@version\s)\d+\.\d+\.\d+' ulearning-course-helper.user.js | head -1)
+          # 注意：脚本头里 @version 后面有多个空格，不能用 (?<=@version\s) 这种定长后行断言
+          VER=$(sed -n 's|^//[[:space:]]*@version[[:space:]]\{1,\}\([0-9][0-9.]*\).*|\1|p' ulearning-course-helper.user.js | head -n1)
           echo "tag=$TAG version=$VER"
+          if [ -z "$VER" ]; then
+            echo "::error::未能从脚本头解析出 @version"
+            exit 1
+          fi
           if [ "$TAG" != "$VER" ]; then
             echo "::error::tag ($TAG) 与 @version ($VER) 不一致"
             exit 1
