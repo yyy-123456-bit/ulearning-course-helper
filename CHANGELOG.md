@@ -2,6 +2,14 @@
 
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 与 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### Docs
+
+- 新增 `docs/global-speed.md`：Edge 扩展商店安装 Global Speed、授权、倍速设置、快捷键与风险说明
+- 说明 Global Speed 与本脚本倍速设置的互相覆盖问题，并给出三种共存方案
+- README 增加「可选：浏览器级倍速」章节；排查手册补充对应条目（编号 6）
+
 ## [1.0.0] - 2026-11-18
 
 ### Added

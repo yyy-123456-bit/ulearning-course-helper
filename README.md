@@ -72,6 +72,15 @@ JSON 数组，字段兼容常见同类脚本（`question`/`q`/`title`、`answer`
 | 课件 PPT 逐页翻页 | ❌ | 无可靠"已看完"标记，不做 |
 | 学校定制域名 | ⚠️ | 需自行在 `@match` 增加域名 |
 
+## 可选：浏览器级倍速（第三方扩展）
+
+本项目**默认只到 2x**，且脚本每 2 秒会把倍速拉回面板设定值。如果你另外装了
+[Global Speed](https://microsoftedge.microsoft.com/addons/detail/global-speed-video-spee/mjhlabbcmjflkpjknnicihkfnmbdfced)
+这类全局倍速扩展，**两者会互相覆盖**——表现为"设了倍速没生效"。
+
+- 三个共存方案、安装与授权步骤、快捷键冲突、风险说明：见 [docs/global-speed.md](docs/global-speed.md)
+- 一句话建议：**要么用脚本倍速，要么用扩展，不要两边各调各的**；在优学院上不建议超过 1.5x，也不建议开"幽灵模式"。
+
 ## 排查
 
 点面板 **🔍 诊断**，会复制一段 JSON（视频数、题目容器命中数、选项命中数、翻页按钮、题库条数、首题文本）。

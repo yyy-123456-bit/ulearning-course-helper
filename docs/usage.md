@@ -5,8 +5,9 @@
 不加速（默认 1x）、不模拟鼠标键盘、不自动交卷。
 
 - 文件：`ulearning-course-helper.user.js`
-- 版本：v1.0.0
+- 版本：v1.0.0（2026-11-18）
 - 运行环境：Tampermonkey（篡改猴）/ ScriptCat（脚本猫）/ Violentmonkey
+- 相关文档：[排查手册](troubleshooting.md) · [浏览器级倍速扩展说明](global-speed.md)
 
 ---
 
